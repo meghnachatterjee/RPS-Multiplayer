@@ -1,0 +1,17 @@
+body {
+	background: url('../images/rps.jpg');
+    background-repeat: repeat;
+    font-style: bold;
+    font-weight: bolder;
+}
+
+.jumbotron{
+    background-color: black;
+    color:white;
+}
+
+#footerSpacer {
+    background: transparent;
+    width: 100%;
+    height: 70px;
+  }

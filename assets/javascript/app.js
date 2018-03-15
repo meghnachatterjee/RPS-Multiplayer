@@ -145,7 +145,7 @@
  		if (player1 && player2) {
  			$("#playerPanel1").addClass("playerPanelTurn");
  			$("#playerPanel2").removeClass("playerPanelTurn");
- 			$("#waitingNotice").html("Waiting on " + player1Name + " to choose...");
+ 			$("#waitingNotice").html("Keep calm and wait for " + player1Name + " to play...");
  		}
  	} else if (snapshot.val() === 2) {
  		console.log("TURN 2");
@@ -155,7 +155,7 @@
  		if (player1 && player2) {
  			$("#playerPanel1").removeClass("playerPanelTurn");
  			$("#playerPanel2").addClass("playerPanelTurn");
- 			$("#waitingNotice").html("Waiting on " + player2Name + " to choose...");
+ 			$("#waitingNotice").html("Hold on to your horses " + player2Name + " is going to play now...");
  		}
  	}
  });
@@ -283,7 +283,11 @@
  		database.ref().child("/players/player2/choice").set(choice);
  
  		// Compare player1 and player 2 choices and record the outcome
- 		rpsCompare();
+		 rpsCompare();
+		 // Set the turn value to 1, as it is now player1's turn
+ 		turn = 1;
+ 		database.ref().child("/turn").set(1);
+ 	
  	}
  });
  
